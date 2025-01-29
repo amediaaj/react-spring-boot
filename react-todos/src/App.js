@@ -3,13 +3,14 @@ import './App.css';
 
 function App() {
   return (
-    <div>
-      <div>
-        <div>
+    // margin-top 5 pushes down, container cuts off edges
+    <div className='mt-5 container'>
+      <div className='card'>
+        <div className='card-header'>
           Your Todos
         </div>
-        <div>
-          <table>
+        <div className='card-body'>
+          <table className='table table-hover'>
             <thead>
               <tr>
                 <th scope='col'>#</th>
