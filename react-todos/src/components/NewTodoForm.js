@@ -1,9 +1,17 @@
 import React, {useState} from 'react';
 
-function NewTodoForm() {
+function NewTodoForm(props) {
 
     const [description, setDescription] = useState('');
     const [assigned, setAssigned] = useState('');
+
+    const submitTodo = () => {
+        if (description !== '' && assigned !== '') {
+            props.addTodo(description, assigned);
+            setAssigned('');
+            setDescription('');
+        }
+    }
 
     return <div className='mt-5'>
         <form>
@@ -30,6 +38,7 @@ function NewTodoForm() {
             <button 
                 type='button' 
                 className='btn btn-primary mt-3'
+                onClick={submitTodo}
                 >
                     Add Todo
             </button>
