@@ -14,7 +14,7 @@ function App() {
 
   const addTodo = (description, assigned) => {
     let rowNumber = 0;
-    
+
     if(todos.length > 0) {
       rowNumber = todos[todos.length - 1].rowNumber;
     } else {
@@ -29,6 +29,13 @@ function App() {
     setTodos(todos => [...todos, newTodo]);
   }
 
+  const deleteTodo = (deleteTodoRowNumber) => {
+    let filtered = todos.filter(function (value) {
+      return value.rowNumber !== deleteTodoRowNumber;
+    });
+    setTodos(filtered);
+  }
+
   return (
     // margin-top 5 pushes down, container cuts off edges
     <div className='mt-5 container'>
@@ -37,7 +44,7 @@ function App() {
           Your Todos
         </div>
         <div className='card-body'>
-          <TodoTable todos={todos}/>
+          <TodoTable todos={todos} deleteTodo={deleteTodo}/>
           <button className='btn btn-primary' onClick={addTodo}>
             Add new todo
           </button>
