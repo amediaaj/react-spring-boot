@@ -6,6 +6,13 @@ import NewTodoForm from './components/NewTodoForm';
 function App() {
 
   // Destructuring?
+  const test = useState([
+    {rowNumber: 1, rowDescription: 'Feed Puppy', rowAssigned: 'User One'}
+    ,{rowNumber: 2, rowDescription: 'Water plants', rowAssigned: 'User Two'}
+    ,{rowNumber: 3, rowDescription: 'Make dinner', rowAssigned: 'User One'}
+    ,{rowNumber: 4, rowDescription: 'Charge phone battery', rowAssigned: 'User One'}
+  ])
+  
   const [todos, setTodos] = useState([
     {rowNumber: 1, rowDescription: 'Feed Puppy', rowAssigned: 'User One'}
     ,{rowNumber: 2, rowDescription: 'Water plants', rowAssigned: 'User Two'}
