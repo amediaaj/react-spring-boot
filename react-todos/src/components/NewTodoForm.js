@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 
 function NewTodoForm(props) {
 
+    const [showAddTodoForm, setShowAddTodoForm] = useState(false);
     const [description, setDescription] = useState('');
     const [assigned, setAssigned] = useState('');
 
